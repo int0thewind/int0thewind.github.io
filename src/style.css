@@ -113,12 +113,20 @@ h1, h3 {
 
 h1 {
     font-size: 300%;
+}
+
+div.col-left > h1 {
     margin-top: 16pt;
     margin-bottom: 16pt;
 }
 
 h3 {
     font-size: 150%;
+}
+
+div.col-left > h3 {
+    margin-top: 8pt;
+    margin-bottom: 8pt;
 }
 
 a:link {
