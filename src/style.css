@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap');
+
+:root {
+    --dark: #303030;
+    --light: #FFFFFF;
+    --neutral-light: #706750;
+    --neutral-dark: #ca6750;
+    --accent-dark: #193D30;
+    --accent-light: #38634F;
+
+    --background-color: var(--light);
+    --text-color: var(--dark);
+    --link-visited-color: var(--neutral-light);
+    --hr-color: var(--accent-dark);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--dark);
+        --text-color: var(--light);
+        --link-visited-color: var(--neutral-dark);
+        --hr-color: var(--accent-light);
+    }
+}
+
+/* When the screen is wider than 600px */
+@media screen and (max-width: 600px) {
+    div.col-left > hr {
+        display: none;
+    }
+
+    div.col-left > h3 {
+        margin: 6px;
+    }
+
+    div.col-left-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    div.main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    div.col-left {
+        width: 33%;
+        /* Flexbox container */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-evenly;
+    }
+    
+    div.col-right {
+        width: 67%;
+    }
+
+    div.col-left-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    div.col-left > hr {
+        border-color: var(--hr-color);
+        opacity: 0.3;
+        width: 80%;
+        margin-right: 0px;
+    }
+
+    .side-right {
+        text-align: right;
+    }
+}
+
+body {
+    background-image: url('assets/soft-wallpaper.png');
+    background-repeat: repeat;
+    background-color: var(--background-color);
+    font-family: 'Source Serif Pro', serif;
+    max-width: 900px;
+    margin: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
+div.col-left, div.col-right {
+    margin: 12px;
+}
+
+div.col-right {
+    padding-top: 20pt;
+}
+
+h1, h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+h3 {
+    font-size: 150%;
+}
+
+a:link {
+    color: var(--text-color);
+}
+
+a:visited {
+    color: var(--link-visited-color);
+}
+
+img {
+    max-width: 75%;
+    height: auto;
+}
