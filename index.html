@@ -3,15 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css">
-	<script src="./script.js"></script>
 	<title>yinhanzhi.me</title>
+	<link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-	<h1>Welcome!</h1>
-
-	<p>Hi, and welcome to my personal website!</p>
-	<p>I am Hanzhi Yin. Currently, I am an international student in the University of Illinois at Urbana-Champaign, major in Computer Science + Music. </p>
-	<figure><img src="me.jpg" alt="Shot in Key West" srcset=""></figure>
+	<div class="main">
+		<div class="col-left">
+			<img src="src/me_sm.jpg" alt="Hanzhi Yin">
+			<h1 class="side-right">Hanzhi Yin</h1>
+			
+			<hr>
+			<h3 class="side-right">More Info:</h3>
+			<div class="col-left-list">
+				<a href="" class="">List of Works</a>
+				<a href="" class="">Curriculum Vitæ</a>
+			</div>
+			<hr>
+			<h3 class="side-right">Contact:</h3>
+			<div class="col-left-list">
+				<a href="mailto:yinhanzhi@gmail.com">yinhanzhi@gmail.com</a>
+				<a href="mailto:hanzhiy2@illinois.edu">hanzhiy2@illinois.edu</a>
+			</div>
+		</div>
+		<div class="col-right">
+			<!-- Use main tag to denote its dominance of the html page -->
+			<main role="article">
+				<p>
+					Hello! I am Hanzhi Yin,
+					and I am studying Computer Science + Music in the University of Illinois at Urbana-Champaign.
+				</p>
+			</main>
+		</div>
+	</div>
 </body>
 </html>
