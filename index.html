@@ -7,33 +7,29 @@
 	<link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-	<div class="main">
-		<div class="col-left">
+	<main class="main">
+		<div class="m-img" role="img">
 			<img src="./src/me_sm.jpg" alt="Hanzhi Yin">
-			<h1 class="side-right">Hanzhi Yin</h1>
-			
-			<hr>
-			<h3 class="side-right">More Info:</h3>
-			<div class="col-left-list">
-				<a href="./project/index.html">List of Works (TBD)</a>
-				<a href="./src/resume.pdf">Curriculum Vitæ</a>
-			</div>
-			<hr>
-			<h3 class="side-right">Contact:</h3>
-			<div class="col-left-list">
-				<a href="mailto:yinhanzhi@gmail.com">yinhanzhi@gmail.com</a>
-				<a href="mailto:hanzhiy2@illinois.edu">hanzhiy2@illinois.edu</a>
-			</div>
+			<p class="title">Hanzhi Yin</p>
 		</div>
-		<div class="col-right">
-			<!-- Use main tag to denote its dominance of the html page -->
-			<main role="article">
-				<p>
-					Hello! I am Hanzhi Yin,
-					and I am studying Computer Science + Music in the University of Illinois at Urbana-Champaign.
-				</p>
-			</main>
+
+		<div class="m-link" role="navigation">
+			<a href="./project/index.html">List of Works (TBD)</a>
+			<a href="./src/resume.pdf">Curriculum Vitæ</a>
 		</div>
-	</div>
+
+		<div class="m-text" role="article">
+			<p>
+				Hello! I am Hanzhi Yin,
+				and I am studying Computer Science + Music in the University of Illinois at Urbana-Champaign.
+			</p>
+		</div>
+
+		<div class="m-contact" role="contentinfo">
+			<p class="heading">Contact Me:</p>
+			<a href="mailto:yinhanzhi@gmail.com">yinhanzhi@gmail.com</a>
+			<a href="mailto:hanzhiy2@illinois.edu">hanzhiy2@illinois.edu</a>
+		</div>
+	</main>
 </body>
 </html>
