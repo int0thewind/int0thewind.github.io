@@ -64,6 +64,10 @@ body {
     padding: 12pt 12pt 12pt 12pt;
 }
 
+div.social {
+    display: flex;
+}
+
 div.m-img, div.m-link, div.m-text, div.m-contact {
     display: flex;
     flex-direction: column;
@@ -75,7 +79,7 @@ div.m-text {
 }
 
 /* When the screen width is less than 600px */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     img {
         max-width: 50%;
     }
@@ -91,7 +95,7 @@ div.m-text {
 }
 
 /* When the screen width is greater than 600px */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 600px) {
     main.main {
         display: grid;
         gap: 12pt 12pt;
@@ -147,4 +151,9 @@ p.heading {
 
 img {
     border-radius: 50%;
+}
+
+div.social > a > i {
+    margin: 4px 4px 4px 4px;
+    font-size: 2em;
 }
