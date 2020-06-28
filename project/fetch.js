@@ -1,6 +1,3 @@
-//================================================================
-// Firebase App initialisation
-//================================================================
 firebase.initializeApp({
     apiKey: "AIzaSyCR7lcZQYBccMaAzyyhnixKgnblWURbxpU",
     authDomain: "yinhanzhi-me.firebaseapp.com",
@@ -11,7 +8,16 @@ firebase.initializeApp({
     appId: "1:920311127173:web:482fed3ff117f9c05eddec"
 });
 
-//================================================================
-// Content rendering
-//================================================================
 const db = firebase.firestore();
+
+// db.collection('code').get().then((query) => {
+//     query.forEach((doc) => {
+//         console.log(doc);
+//     })
+// });
+
+db.collection('comp').get().then((query) => {
+    query.forEach((doc) => {
+        console.log(doc);
+    })
+});

@@ -1,7 +1,7 @@
 const codeList = document.getElementById('code-list');
 const compList = document.getElementById('comp-list');
 const codeBtn = document.getElementById('code-btn');
-const compBtn = document.getElementById('comp-btn')
+const compBtn = document.getElementById('comp-btn');
 const toggle = () => {
     codeList.classList.toggle('d-none');
     codeBtn.classList.toggle('active');

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanzhi Yin's Project</title>
     <link rel="stylesheet" href="./dark.css">
+
 </head>
 <body>
     <nav class="navbar stickey-top navbar-dark bg-dark">
@@ -12,21 +13,51 @@
     </nav>
     <div class="wrapper text-center m-3">
         <div class="btn-group mx-auto" role="group">
-            <button class="btn btn-primary active" id="code-btn">Coding Work</button>
-            <button class="btn btn-primary" id="comp-btn">Composition</button>
+            <button class="btn btn-primary" id="code-btn">Coding Work</button>
+            <button class="btn btn-primary active" id="comp-btn">Composition</button>
         </div>
     </div>
-    <div class="container-lg mx-auto" id="code-list">
+    <div class="container-lg mx-auto d-none" id="code-list">
         <p>Code List Works!</p>
         <p>Second Element</p>
     </div>
-    <div class="container-lg mx-auto d-none" id="comp-list">
-        <p>Comp List Works!</p>
-        <p>Second Element</p>
+
+    <div class="container-lg mx-auto" id="comp-list">
+        <div class="card m-3">
+            <div class="card-header">
+                <h5>Composition Work #1 Title</h5>
+                <p>This is the description of the piece</p>
+                <button class="btn btn-info btn-sm float-right" data-toggle="collapse" data-target="#c1">More Info</button>
+            </div>
+        
+            <div id="c1" class="collapse" data-parent="#comp-list">
+                <div class="card-body">
+                    <p>The inspiration for this fugue was from the beautiful autumn scenery in the Robert Allerton Park.</p>
+                    <a defer class="btn btn-link" href="https://drive.google.com/file/d/16aOQE6xrlPRqZa77RxOxlYorNhBhDYDi/view?usp=sharing">Score Link</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card m-3">
+            <div class="card-header">
+                <h5>Composition Work #1 Title</h5>
+                <p>This is the description of the piece</p>
+                <button class="btn btn-info btn-sm float-right" data-toggle="collapse" data-target="#c2">More Info</button>
+            </div>
+        
+            <div id="c2" class="collapse" data-parent="#comp-list">
+                <div class="card-body">
+                    The inspiration for this fugue was from the beautiful autumn scenery in the Robert Allerton Park.
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
-    <script src="./fetch.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
+    <script defer src="./fetch.js"></script>
 </body>
 </html>
