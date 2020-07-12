@@ -1,0 +1,17 @@
+[
+    {   
+        "id": "C. 1",
+        "isMain": false,
+        "title": "Fugue for Strings in F Major, \"Falling Leaves\"",
+        "year": 2018,
+        "month": 11,
+        "desc": "The inspiration for this fugue was from the beautiful autumn scenery in the Robert Allerton Park. From that, I came out the main theme of the fugue. When I was composing it, I realised that the theme is quite similar to Mozart's Requiem in d minor, K. 626, the 6th movement, Recordare. Eventually I decided to put this into a fugue, since fugue repeatedly elaborate one single motive. This is a very primitive try on fugue, as this piece actually contains lots of non-stylistic chords and even retrograde, but this is actually my first completed long piece and also my first fugue.",
+        "shortDesc": "A three voice fugue for string instrument inspired by the beautiful autumn scenery in the Robert Allerton Park.",
+        "links": {
+            "score": "https://drive.google.com/file/d/16aOQE6xrlPRqZa77RxOxlYorNhBhDYDi/view?usp=sharing"
+        },
+        "tags": ["Strings", "Fugue"],
+        "imgs": []
+    }
+
+]
