@@ -1,7 +1,4 @@
 'use strict';
-// ================================================================
-// Constant Declaration
-// ================================================================
 
 const codeList = document.getElementById('code-list');
 const compList = document.getElementById('comp-list');
@@ -10,34 +7,33 @@ const compBtn = document.getElementById('comp-btn');
 
 const monthAbbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const toggle = () => {
+const toggleList = _ => {
     codeList.classList.toggle('d-none');
     codeBtn.classList.toggle('active');
     compList.classList.toggle('d-none');
     compBtn.classList.toggle('active');
 }
 
-const newPara = (c, ...classList) => {
+const newPara = (text, ...classList) => {
     const p = document.createElement('p');
     p.classList.add(...classList)
-    p.innerText = c;
+    p.innerText = text;
     return p;
 }
 
-const newSpan = (c, ...classList) => {
+const newSpan = (text, ...classList) => {
     const s = document.createElement('span');
     s.classList.add(...classList);
-    s.innerText = c;
+    s.innerText = text;
     return s;
 }
 
-const newLink = (c, l, n, ...classList) => {
+const newLink = (text, link, newTab, ...classList) => {
     const a = document.createElement('a');
     a.classList.add(...classList);
-    a.innerText = c;
-    a.setAttribute('href', l);
-    if (n)
-        a.setAttribute('target', '_blank');
+    a.innerText = text;
+    a.setAttribute('href', link);
+    if (newTab) a.setAttribute('target', '_blank');
     return a;
 }
 
@@ -47,18 +43,20 @@ const newDiv = (...classList) => {
     return d;
 }
 
-const genComp = (d) => {
-    const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs } = d;
+const checkID = id => { if (document.getElementById(id)) throw new Error('Duplicated project ID found!') }
+
+const genCard = d => {
+    const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs, colab } = d;
+    checkID(id);
 
     const cardHeader = newDiv('card-header');
-    cardHeader.append(newPara(title, 'font-weight-bold', 'h4'), newPara(shortDesc));
-        const cardBtnList = newDiv('d-flex', 'justify-content-start', 'align-items-center');
+        const cardBtnList = newDiv('d-flex', 'flex-wrap', 'justify-content-start', 'align-items-center');
         cardBtnList.append(newSpan(`${monthAbbr[month - 1]} ${year}`, 'badge', 'badge-pill', 'badge-success'));
-        if (isMain)
-            cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-warning'));
-        if (tags.length !== 0)
+        if (isMain) cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-warning'));
+        if (tags.length !== 0) {
             for (const tag of tags)
                 cardBtnList.append(newSpan(tag, 'badge', 'badge-pill', 'badge-warning', 'mx-1'));
+        }
         cardBtnList.append(newSpan('', 'm-auto'));
         const cardInfoBtn = document.createElement('button');
             cardInfoBtn.classList.add('btn', 'btn-info', 'btn-sm');
@@ -66,26 +64,31 @@ const genComp = (d) => {
             cardInfoBtn.setAttribute('data-target', `#${id}`);
             cardInfoBtn.innerText = 'More Info';
         cardBtnList.append(cardInfoBtn);
+    cardHeader.append(newPara(title, 'font-weight-bold', 'h4'), newPara(shortDesc));
     cardHeader.append(cardBtnList);
 
     const cardMain = newDiv('collapse');
     cardMain.id = id;
     cardMain.setAttribute('data-parent', '#comp-list');
         const cardBody = newDiv('card-body');
+        cardBody.append(newPara(desc));
             const cardLinkList = newDiv('d-flex', 'justify-content-start', 'flex-wrap')
-            for (const prop in links) {
-                cardLinkList.append(newLink(prop, links[prop], true, 'btn', 'btn-link'));
+            if (colab.length !== 0) {
+                const colabList = newDiv('d-flex', 'flex-column', 'm-3');
+                colabList.append(newPara('Collaborators:'));
+                colab.forEach(person => {
+                    colabList.append(newPara(`${person.name}. ${person.contact ? person.contact : 'Contact unavailable'}`, 'm-0', 'p-0'));
+                });
+                cardBody.append(colabList);
             }
-        cardBody.append(newPara(desc), cardLinkList);
+            for (const prop in links)
+                cardLinkList.append(newLink(prop, links[prop], true, 'btn', 'btn-link'));
+        cardBody.append(cardLinkList);
     cardMain.append(cardBody);
 
     const card = newDiv('card', 'm-3');
     card.append(cardHeader, cardMain);
     return card;
-}
-
-const genCode = (d) => {
-    const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs } = d;
 }
 
 const sortData = (f, s) => {
@@ -94,31 +97,19 @@ const sortData = (f, s) => {
     return f.month - s.month;
 }
 
-// ================================================================
-// Async procedures
-// ================================================================
-
-const fetchComp = async () => {
-    try {
-        const data = JSON.parse(await (await fetch('./lib/comp.json')).text());
-        data.sort(sortData);
-        data.forEach(d => compList.append(genComp(d))); 
-    } catch (e) { console.error(e); }
+const fetchComp = async _ => {
+    const data = JSON.parse(await (await fetch('./lib/comp.json')).text());
+    data.sort(sortData);
+    data.forEach(d => compList.append(genCard(d))); 
 }
 
-const fetchCode = async () => {
-    try {
-        const data = JSON.parse(await (await fetch('./lib/code.json')).text());
-        data.sort(sortData);
-        data.forEach(d => codeList.append(genCode(d))); 
-    } catch (e) { console.error(e); }
+const fetchCode = async _ => {
+    const data = JSON.parse(await (await fetch('./lib/code.json')).text());
+    data.sort(sortData);
+    data.forEach(d => codeList.append(genCard(d))); 
 }
 
-// ================================================================
-// Main
-// ================================================================
-
-fetchComp();
-fetchCode();
-codeBtn.onclick = _ => { if (!codeBtn.classList.contains('active')) toggle() }
-compBtn.onclick = _ => { if (!compBtn.classList.contains('active')) toggle() }
+fetchComp().catch(console.error);
+fetchCode().catch(console.error);
+codeBtn.onclick = _ => { if (!codeBtn.classList.contains('active')) toggleList() }
+compBtn.onclick = _ => { if (!compBtn.classList.contains('active')) toggleList() }
