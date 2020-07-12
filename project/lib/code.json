@@ -1,0 +1,30 @@
+[
+    {   
+        "id": "cs296-proj2",
+        "isMain": false,
+        "title": "CS 296 Data Visualization Project 2",
+        "year": 2019,
+        "month": 4,
+        "desc": "Data visulization of the incoming student demography of UIUC. Written by JavaScript and HTML using d3.js. Incoperated a variety of web design techniques including sidebars, mouseover tip, and interactable chart.",
+        "shortDesc": "CS 296, Data Visualization, SP19, in-class project",
+        "links": {
+            "GitHub": "https://github.com/int0thewind/CS-296-Project-2"
+        },
+        "tags": ["JavaScript", "Data Visualization", "Web"],
+        "imgs": [],
+        "colab": [
+            {
+                "name": "Jiangran Wang",
+                "contact": ""
+            },
+            {
+                "name": "Zhengguan Dai",
+                "contact": ""
+            },
+            {
+                "name": "Mingjie Zhao",
+                "contact": ""
+            }
+        ]
+    }
+]
