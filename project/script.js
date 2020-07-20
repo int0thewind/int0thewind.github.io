@@ -43,7 +43,7 @@ const newDiv = (...classList) => {
     return d;
 }
 
-const checkID = id => { if (document.getElementById(id)) throw new Error('Duplicated project ID found!') }
+const checkID = id => { if (document.getElementById(id)) throw new Error(`Duplicated project ID found! Duplicated ID: ${id}`); }
 
 const genCard = d => {
     const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs, colab } = d;
@@ -77,7 +77,7 @@ const genCard = d => {
                 const colabList = newDiv('d-flex', 'flex-column', 'm-3');
                 colabList.append(newPara('Collaborators:'));
                 colab.forEach(person => {
-                    colabList.append(newPara(`${person.name}. ${person.contact ? person.contact : 'Contact unavailable'}`, 'm-0', 'p-0'));
+                    colabList.append(newPara(`${person.name}. ${person.contact}`, 'm-0', 'p-0'));
                 });
                 cardBody.append(colabList);
             }
