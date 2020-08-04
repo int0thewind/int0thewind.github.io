@@ -117,8 +117,9 @@ div.m-text {
     
     div.m-text {
         grid-area: text;
+        padding: 12pt 12pt 12pt 12pt;
     }
-    
+
     div.m-contact {
         grid-area: contact;
     }
