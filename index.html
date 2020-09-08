@@ -7,6 +7,16 @@
 	<title>yinhanzhi.me</title>
 	<link rel="stylesheet" href="./style.css">
 	<script src="https://kit.fontawesome.com/203a21a085.js" crossorigin="anonymous"></script>
+	<script defer>
+		fetch('https://api.github.com/repos/int0thewind/int0thewind.github.io/commits')
+			.then(d => d.json())
+			.then(req => {
+				const commit = req[0].sha;
+				const link = req[0].html_url;
+				const date = req[0].commit.committer.date.substring(0, 10);
+				console.log(`Latest Commit: ${commit.substring(0, 6)} on ${date}\n${link}`);
+			});
+	</script>
 </head>
 <body>
 	<main class="main">
