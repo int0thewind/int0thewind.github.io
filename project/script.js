@@ -16,7 +16,7 @@ const toggleList = _ => {
 
 const newPara = (text, ...classList) => {
     const p = document.createElement('p');
-    p.classList.add(...classList)
+    p.classList.add(...classList);
     p.innerText = text;
     return p;
 }
@@ -43,7 +43,10 @@ const newDiv = (...classList) => {
     return d;
 }
 
-const checkID = id => { if (document.getElementById(id)) throw new Error(`Duplicated project ID found! Duplicated ID: ${id}`); }
+const checkID = id => {
+    if (document.getElementById(id))
+        throw new Error(`Duplicated project ID found! Duplicated ID: ${id}`);
+}
 
 const genCard = d => {
     const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs, colab } = d;
@@ -52,7 +55,8 @@ const genCard = d => {
     const cardHeader = newDiv('card-header');
         const cardBtnList = newDiv('d-flex', 'flex-wrap', 'justify-content-start', 'align-items-center');
         cardBtnList.append(newSpan(`${monthAbbr[month - 1]} ${year}`, 'badge', 'badge-pill', 'badge-success'));
-        if (isMain) cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-warning'));
+        if (isMain)
+            cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-warning'));
         if (tags.length !== 0) {
             for (const tag of tags)
                 cardBtnList.append(newSpan(tag, 'badge', 'badge-pill', 'badge-warning', 'mx-1'));
@@ -72,7 +76,7 @@ const genCard = d => {
     cardMain.setAttribute('data-parent', '#comp-list');
         const cardBody = newDiv('card-body');
         cardBody.append(newPara(desc));
-            const cardLinkList = newDiv('d-flex', 'justify-content-start', 'flex-wrap')
+            const cardLinkList = newDiv('d-flex', 'justify-content-start', 'flex-wrap');
             if (colab.length !== 0) {
                 const colabList = newDiv('d-flex', 'flex-column', 'm-3');
                 colabList.append(newPara('Collaborators:'));
@@ -92,24 +96,36 @@ const genCard = d => {
 }
 
 const sortData = (f, s) => {
-    if (f.isMain - s.isMain !== 0) return s.isMain - f.isMain;
-    if (f.year - s.year !== 0) return f.year - s.year;
+    if (f.isMain - s.isMain !== 0)
+        return s.isMain - f.isMain;
+    if (f.year - s.year !== 0)
+        return f.year - s.year;
     return f.month - s.month;
 }
 
 const fetchComp = async _ => {
-    const data = JSON.parse(await (await fetch('./lib/comp.json')).text());
+    const data = JSON.parse(await
+        (await fetch('./lib/comp.json')).text()
+    );
     data.sort(sortData);
     data.forEach(d => compList.append(genCard(d))); 
 }
 
 const fetchCode = async _ => {
-    const data = JSON.parse(await (await fetch('./lib/code.json')).text());
+    const data = JSON.parse(await
+        (await fetch('./lib/code.json')).text()
+    );
     data.sort(sortData);
     data.forEach(d => codeList.append(genCard(d))); 
 }
 
 fetchComp().catch(console.error);
 fetchCode().catch(console.error);
-codeBtn.onclick = _ => { if (!codeBtn.classList.contains('active')) toggleList() }
-compBtn.onclick = _ => { if (!compBtn.classList.contains('active')) toggleList() }
+codeBtn.onclick = _ => {
+    if (!codeBtn.classList.contains('active'))
+        toggleList();
+}
+compBtn.onclick = _ => {
+    if (!compBtn.classList.contains('active'))
+        toggleList();
+}
