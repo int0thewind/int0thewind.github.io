@@ -49,7 +49,7 @@ a:visited {
 
 body {
     background-color: var(--background-color);
-    background-image: url('./assets/soft-wallpaper.png');
+    background-image: url('./src/assets/soft-wallpaper.png');
     background-repeat: repeat;
     font-family: 'Source Serif Pro', serif;
 }
