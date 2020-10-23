@@ -10,7 +10,7 @@
         "links": {
             "GitHub": "https://github.com/int0thewind/CS-296-Project-2"
         },
-        "tags": ["JavaScript", "Data Visualization", "Web"],
+        "tags": ["JavaScript", "Data Visualization", "Front End", "Class Project"],
         "imgs": [],
         "colab": [
             {
@@ -26,5 +26,21 @@
                 "contact": ""
             }
         ]
+    },
+    {   
+        "id": "tet-react",
+        "isMain": true,
+        "title": "TET React",
+        "year": 2020,
+        "month": 10,
+        "desc": "This personal and individual project is inspiried by one of the assignment in MUS 105, which requires us to convert MIDI, frequency and musical pitch. The motivation of this project is to provide a graphical interface so that users won't need to entangle with command line tools. I choose React as the main framework to build up the front-end interface, and all the previous Python code has been reversed engineered to JavaScript to allow all the computation to be done solely on front-end.",
+        "shortDesc": "Real-time MIDI number, frequency, and musical pitch converter.",
+        "links": {
+            "GitHub": "https://github.com/int0thewind/TET-React",
+            "Demo": "https://tet12-f20d7.firebaseapp.com/"
+        },
+        "tags": ["JavaScript", "React", "Front End", "Music Related Computation"],
+        "imgs": [],
+        "colab": []
     }
 ]

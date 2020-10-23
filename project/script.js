@@ -56,7 +56,7 @@ const genCard = d => {
         const cardBtnList = newDiv('d-flex', 'flex-wrap', 'justify-content-start', 'align-items-center');
         cardBtnList.append(newSpan(`${monthAbbr[month - 1]} ${year}`, 'badge', 'badge-pill', 'badge-success'));
         if (isMain)
-            cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-warning'));
+            cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-danger'));
         if (tags.length !== 0) {
             for (const tag of tags)
                 cardBtnList.append(newSpan(tag, 'badge', 'badge-pill', 'badge-warning', 'mx-1'));
@@ -97,10 +97,12 @@ const genCard = d => {
 
 const sortData = (f, s) => {
     if (f.isMain - s.isMain !== 0)
-        return s.isMain - f.isMain;
+        return f.isMain ? -1 : 1;
     if (f.year - s.year !== 0)
-        return f.year - s.year;
-    return f.month - s.month;
+        return f.year > s.year ? -1 : 1;
+    if (f.month - s.month !== 0)
+        return f.month > s.month ? -1 : 1;
+    return f.id > s.id ? -1 : 1;
 }
 
 const fetchComp = async _ => {

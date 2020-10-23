@@ -1,18 +1,107 @@
 [
     {   
-        "id": "C.1",
+        "id": "C001",
         "isMain": false,
         "title": "Fugue for Strings in F Major, \"Falling Leaves\"",
         "year": 2018,
         "month": 11,
         "desc": "The inspiration for this fugue was from the beautiful autumn scenery in the Robert Allerton Park. From that, I came out the main theme of the fugue. When I was composing it, I realised that the theme is quite similar to Mozart's Requiem in d minor, K. 626, the 6th movement, Recordare. Eventually I decided to put this into a fugue, since fugue repeatedly elaborate one single motive. This is a very primitive try on fugue, as this piece actually contains lots of non-stylistic chords and even retrograde, but this is actually my first completed long piece and also my first fugue.",
-        "shortDesc": "A three voice fugue for string instrument inspired by the beautiful autumn scenery in the Robert Allerton Park.",
+        "shortDesc": "A three-voice fugue for string instrument inspired by the beautiful autumn scenery in the Robert Allerton Park.",
         "links": {
-            "Score": "https://drive.google.com/file/d/16aOQE6xrlPRqZa77RxOxlYorNhBhDYDi/view?usp=sharing"
+            "Score": "./lib/C001.pdf"
         },
-        "tags": ["Strings", "Fugue"],
+        "tags": ["Strings", "Fugue", "Pre-college Work"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C004",
+        "isMain": false,
+        "title": "Short String Quartet in A-flat Major, \"Sunset\"",
+        "year": 2019,
+        "month": 1,
+        "desc": "This string quartet one of my most lyrical pre-college work, which was composed fast. Saying it to be fast is because this piece was finished within 2 hours. Without having any fixed form or any cadence, the piece containing 50 measures should be considered as a whole. This is also my first contact with string quartet. Except from that string fugue, I have no prior experience with composing string instruments pieces. When composing this piece, I tried my best to ensure all instruments can have their best melodies. This piece is not only homophonic, but also polyphonic at some measures. The piece was entitled \"Sunset\" after the completion, probably because of the A-flat major, as A-flat major always gives me a sense of dark pink and orange, very similar to the color of sunset.",
+        "shortDesc": "A short string quartet aiming to depict sunsets.",
+        "links": {
+            "Score": "./lib/C004.pdf"
+        },
+        "tags": ["Strings", "Pre-college Work"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C005",
+        "isMain": false,
+        "title": "Fugue for Two Flutes in g minor",
+        "year": 2019,
+        "month": 1,
+        "desc": "This is another fugue, and this time it is for flute duet. Again, this is also a fast composition finished within an afternoon, and this is also my first touch with woodwind instrument. Since I rarely compose in minor, at that time I just want to do something in minor. Because of that, this piece remained to be purely programatic, meaning that there is no title. Soon I realized that the melody I came out by intention is great on flutes, so I immediately started my creation. It was a surprise that I started this piece after lunch and finished it right before supper, no disturbance",
+        "shortDesc": "A two-voice fugue for two flutes",
+        "links": {
+            "Score": "./lib/C005.pdf"
+        },
+        "tags": ["Flute", "Fugue", "Pre-college Work"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C006",
+        "isMain": false,
+        "title": "Sonata for Two Pianos in B-flat Major, \"Playground\"",
+        "year": 2019,
+        "month": 1,
+        "desc": "This is one of a gigantic pre-college work. The sonata for two pianos illustrate a scene that two children playing on the playground. Some times they may have conflicts, but eventually they will be back to each other and continue their wonderful friendship. I finished the exposition part before the start of the Fall 2018 semester at UIUC, but this piece was actually finished on January 20, 2019. I remained to be perfectionist. Therefore I spent a long time thinking about the right melody in the development. There is a long gap between the starting time and the ending time, but, once I finished it, it soon becomes the best piece I have ever written.",
+        "shortDesc": "A sonata for two pianos.",
+        "links": {
+            "Score": "./lib/C006.pdf"
+        },
+        "tags": ["Piano", "Pre-college Work"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C007",
+        "isMain": true,
+        "title": "Clarinet solo, \"Heat\"",
+        "year": 2019,
+        "month": 9,
+        "desc": "My first composition since I received on college guidance. This a clarinet solo composed in b octatonic scale (0, 2). I was imagining a disciple preegrinate an endless dessert. Desperation and miserableness are tantelizing the pilgrim. B octatonic has a dark, yet scorching feel to me. Unlike my previous works, when composing this piece, I was guided by a sentiment instead of conventional harmonic progression, and the result is appealing.",
+        "shortDesc": "First approach to tramp over the conventional barrier.",
+        "links": {
+            "Score": "./lib/C007.pdf"
+        },
+        "tags": ["Clarinet"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C008",
+        "isMain": true,
+        "title": "Prelude and Fugue in B",
+        "year": 2019,
+        "month": 10,
+        "desc": "This piece was composed for my composition recital, and I limited its difficulity to my capability. I incorporated contrapuntual techniques in this composition, yet I also introduced something new. The fugue's recurring theme is recaptulated all the way along the B natural harnomics rounded to a equal tempered modern piano, and I also incorporated a set ({0, 2, 7}) throughout. The recital was my first one, which is another breakthrough of my query to composition.",
+        "shortDesc": "A set of prelude and fugue to be played for my recital.",
+        "links": {
+            "Score": "./lib/C008.pdf"
+        },
+        "tags": ["Piano", "Fugue"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C009",
+        "isMain": true,
+        "title": "Suite for Clarinet, Oboe, and violoncello, \"Suite Alaska\"",
+        "year": 2020,
+        "month": 7,
+        "desc": "My first chamber work, also my first completed multi-movement work, and it will be recorded by the UIUC IME this year. Each movement illustrates a color that I saw in Alaska, which can be reflected by those pictured in the link.",
+        "shortDesc": "A suite composed for clarinet, oboe, and violoncello inspired by my travel to Alaska.",
+        "links": {
+            "Score": "https://1drv.ms/u/s!AjwXddE83zB_hLVOrhAY2gwNIz7ljA?e=CCtLxn"
+        },
+        "tags": ["Chamber Music", "Oboe", "Clarinet", "Violoncello", "On Recording"],
         "imgs": [],
         "colab": []
     }
-
 ]
