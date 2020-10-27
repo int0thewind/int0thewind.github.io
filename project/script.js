@@ -14,21 +14,21 @@ const toggleList = _ => {
     compBtn.classList.toggle('active');
 }
 
-const newPara = (text, ...classList) => {
+const newP = (text, ...classList) => {
     const p = document.createElement('p');
     p.classList.add(...classList);
     p.innerText = text;
     return p;
 }
 
-const newSpan = (text, ...classList) => {
+const newS = (text, ...classList) => {
     const s = document.createElement('span');
     s.classList.add(...classList);
     s.innerText = text;
     return s;
 }
 
-const newLink = (text, link, newTab, ...classList) => {
+const newA = (text, link, newTab, ...classList) => {
     const a = document.createElement('a');
     a.classList.add(...classList);
     a.innerText = text;
@@ -37,7 +37,7 @@ const newLink = (text, link, newTab, ...classList) => {
     return a;
 }
 
-const newDiv = (...classList) => {
+const newD = (...classList) => {
     const d = document.createElement('div');
     d.classList.add(...classList);
     return d;
@@ -52,45 +52,46 @@ const genCard = d => {
     const { id, isMain, title, year, month, desc, shortDesc, links, tags, imgs, colab } = d;
     checkID(id);
 
-    const cardHeader = newDiv('card-header');
-        const cardBtnList = newDiv('d-flex', 'flex-wrap', 'justify-content-start', 'align-items-center');
-        cardBtnList.append(newSpan(`${monthAbbr[month - 1]} ${year}`, 'badge', 'badge-pill', 'badge-success'));
+    const cardHeader = newD('card-header');
+    const cardBtnList = newD('d-flex', 'justify-content-start', 'align-items-center')
+        const cardTagList = newD('d-flex', 'flex-wrap', 'justify-content-start', 'align-items-center', 'flex-grow-1');
+        cardTagList.append(newS(`${monthAbbr[month - 1]} ${year}`, 'badge', 'badge-pill', 'badge-success'));
         if (isMain)
-            cardBtnList.append(newSpan('Major Work', 'badge', 'badge-pill', 'badge-danger'));
+            cardTagList.append(newS('Major Work', 'badge', 'badge-pill', 'badge-danger'));
         if (tags.length !== 0) {
             for (const tag of tags)
-                cardBtnList.append(newSpan(tag, 'badge', 'badge-pill', 'badge-warning', 'mx-1'));
+                cardTagList.append(newS(tag, 'badge', 'badge-pill', 'badge-warning', 'mx-1'));
         }
-        cardBtnList.append(newSpan('', 'm-auto'));
+        // cardTagList.append(newS('', 'm-auto'));
+        cardBtnList.append(cardTagList)
         const cardInfoBtn = document.createElement('button');
             cardInfoBtn.classList.add('btn', 'btn-info', 'btn-sm');
             cardInfoBtn.setAttribute('data-toggle', 'collapse');
             cardInfoBtn.setAttribute('data-target', `#${id}`);
-            cardInfoBtn.innerText = 'More Info';
+            cardInfoBtn.innerText = 'More';
+            // cardInfoBtn.style.height = '30px';
         cardBtnList.append(cardInfoBtn);
-    cardHeader.append(newPara(title, 'font-weight-bold', 'h4'), newPara(shortDesc));
+    cardHeader.append(newP(title, 'font-weight-bold', 'h4'), newP(shortDesc));
     cardHeader.append(cardBtnList);
 
-    const cardMain = newDiv('collapse');
+    const cardMain = newD('collapse');
     cardMain.id = id;
     cardMain.setAttribute('data-parent', '#comp-list');
-        const cardBody = newDiv('card-body');
-        cardBody.append(newPara(desc));
-            const cardLinkList = newDiv('d-flex', 'justify-content-start', 'flex-wrap');
+        const cardBody = newD('card-body');
+        cardBody.append(newP(desc));
+            const cardLinkList = newD('d-flex', 'justify-content-start', 'flex-wrap');
             if (colab.length !== 0) {
-                const colabList = newDiv('d-flex', 'flex-column', 'm-3');
-                colabList.append(newPara('Collaborators:'));
-                colab.forEach(person => {
-                    colabList.append(newPara(`${person.name}. ${person.contact}`, 'm-0', 'p-0'));
-                });
+                const colabList = newD('d-flex', 'flex-column', 'm-3');
+                colabList.append(newP('Collaborators:'));
+                colab.forEach(p => colabList.append(newP(`${p.name}. ${p.contact}`, 'm-0', 'p-0')));
                 cardBody.append(colabList);
             }
             for (const prop in links)
-                cardLinkList.append(newLink(prop, links[prop], true, 'btn', 'btn-link'));
+                cardLinkList.append(newA(prop, links[prop], true, 'btn', 'btn-link'));
         cardBody.append(cardLinkList);
     cardMain.append(cardBody);
 
-    const card = newDiv('card', 'm-3');
+    const card = newD('card', 'm-3');
     card.append(cardHeader, cardMain);
     return card;
 }
