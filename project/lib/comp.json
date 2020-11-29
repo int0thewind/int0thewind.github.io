@@ -61,7 +61,7 @@
     },
     {   
         "id": "C007",
-        "isMain": true,
+        "isMain": false,
         "title": "Clarinet solo, \"Heat\"",
         "year": 2019,
         "month": 9,
@@ -76,7 +76,7 @@
     },
     {   
         "id": "C008",
-        "isMain": true,
+        "isMain": false,
         "title": "Prelude and Fugue in B",
         "year": 2019,
         "month": 10,
@@ -95,12 +95,27 @@
         "title": "Suite for Clarinet, Oboe, and violoncello, \"Suite Alaska\"",
         "year": 2020,
         "month": 7,
-        "desc": "My first chamber work, also my first completed multi-movement work, and it will be recorded by the UIUC IME this year. Each movement illustrates a color that I saw in Alaska, which can be reflected by those pictured in the link.",
+        "desc": "My first chamber work with multiple movements. Each movement illustrates a color that I saw in Alaska, which can be reflected by those pictured in the link.",
         "shortDesc": "A suite composed for clarinet, oboe, and violoncello inspired by my travel to Alaska.",
         "links": {
             "Score": "https://1drv.ms/u/s!AjwXddE83zB_hLVOrhAY2gwNIz7ljA?e=CCtLxn"
         },
-        "tags": ["Chamber Music", "Oboe", "Clarinet", "Violoncello", "On Recording"],
+        "tags": ["Chamber Music", "Oboe", "Clarinet", "Violoncello"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "C010",
+        "isMain": false,
+        "title": "Atrocity",
+        "year": 2020,
+        "month": 11,
+        "desc": "A silent yet painful condemn to those nescient and unfeeling people who bring harm to others without even knowing what they have done, the piece \"Atrocity\" is meant to be harsh and miserable.",
+        "shortDesc": "My first digital composition, with all sounds designed using FM8 synthesizers.",
+        "links": {
+            "SoundCloud": "https://soundcloud.com/y1azj4evwigx/atrocity"
+        },
+        "tags": ["Digical Work", "FM8", "Sound Design", "Frequency Modulation"],
         "imgs": [],
         "colab": []
     }
