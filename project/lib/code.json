@@ -29,7 +29,7 @@
     },
     {   
         "id": "tet-react",
-        "isMain": true,
+        "isMain": false,
         "title": "TET React",
         "year": 2020,
         "month": 10,
@@ -40,6 +40,36 @@
             "Demo": "https://tet12-f20d7.firebaseapp.com/"
         },
         "tags": ["JavaScript", "React", "Front End", "Music Related Computation"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "tone-beat",
+        "isMain": false,
+        "title": "Tone Beat Maker",
+        "year": 2020,
+        "month": 11,
+        "desc": "Another front-end application. With Tone.js with Web Audio API incorporated, this application allows user to play sound by clicking on different tiles. Customization is allowed, for each tile can be double clicked to change the pitch. Same with the TET React, both utilized the JavaScript version of the pitch-MIDI converter, which is shared in between both projects.",
+        "shortDesc": "Front-end application allows user to make rudimentary sounds.",
+        "links": {
+            "GitHub": "https://github.com/int0thewind/ToneBeatMaker"
+        },
+        "tags": ["JavaScript", "React", "Front End", "Web Audio"],
+        "imgs": [],
+        "colab": []
+    },
+    {   
+        "id": "sound-maker",
+        "isMain": false,
+        "title": "SoundMaker",
+        "year": 2020,
+        "month": 11,
+        "desc": "One of my colossal personal project that is still working on progress but has already shown up a great potential. This project is meant to model each part of a electronic sound, like pitch, envelop, spectrum, volume, and wave pattern, and further development including automized sound event generation and export. ",
+        "shortDesc": "Ongoing project. Parameterized Elektronische Musik generator.",
+        "links": {
+            "GitHub": "https://github.com/int0thewind/SoundMaker"
+        },
+        "tags": ["Ongoing", "Python", "CLI", "Audio Computation", "Composition"],
         "imgs": [],
         "colab": []
     }
